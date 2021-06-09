@@ -1,0 +1,11 @@
+svg viewBox='0 0 {{size+barlen}} {{size}}' width='{{size+barlen}}px' height='{{size}}px' xmlns='http://www.w3.org/2000/svg':
+    foreignObject x='0' y='0' width='{{size+barlen}}' height='{{size}}':
+        html xmlns='http://www.w3.org/1999/xhtml':
+            style:
+                .img { border-radius: {{radius}}px; background-image: url('{{b64}}'); background-size: cover; position: absolute; top: {{border}}px; left: {{border}}px; width: {{size-2*border}}px; height: {{size-2*border}}px; box-shadow: 0px 0px {{border}}px rgba(0,0,0,{{shadow}}); } .bar { display: flex; align-items: center; overflow: hidden; font-family: consolas, SimHei; position: absolute; top: {{border+size*0.1}}px; left: {{size/2}}px; height: {{(size-2*border)*0.8}}px; background: linear-gradient(rgb{{color1[0],color1[1], color1[2]}}, rgb{{color2[0],color2[1], color2[2]}}); box-shadow: 0px 0px {{border}}px rgba(0,0,0,{{shadow}}); border-radius: {{barradius}}px; white-space: nowrap; padding-left: {{size/2}}px; font-size: {{fontsize}}px; color: rgb{{fontcolor[0], fontcolor[1], fontcolor[2]}}; text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.5); } @keyframes move { from { width: 0px;} to { width: {{barlen-border}}px; } } .bar { animation-duration: {{anime}}s; animation-name: move; animation-fill-mode: both; } 
+            {% if barlen %}
+            div.bar:
+                span:
+                    {{bartxt}}
+            {% endif %}
+            div.img:
