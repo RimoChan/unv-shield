@@ -20,7 +20,7 @@
 
 把这行代码加到reader中，就会显示一个徽章，像是这样——
 
-<!-- ![](https://unv-shield.librian.net/api/unv_shield?code=1&repo=RimoChan/Librian) -->
+![](https://unv-shield.librian.net/api/unv_shield?code=1&repo=RimoChan/Librian)
 
 
 ## 自定义
