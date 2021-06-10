@@ -18,7 +18,7 @@
 ![](https://unv-shield.librian.net/api/unv_shield?code=1&repo=你的名字/repo的名字)
 ```
 
-把这行代码加到reader中，就会显示一个徽章，像是这样——
+把这行代码加入到你的readme中，就会显示成一个徽章，像是这样——
 
 ![](https://unv-shield.librian.net/api/unv_shield?code=1&repo=RimoChan/Librian)
 
