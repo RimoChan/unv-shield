@@ -1,3 +1,4 @@
+import json
 import base64
 import colorsys
 import statistics
@@ -78,8 +79,15 @@ def 源(url, limit):
     return data, backcolor
 
 
+def color(h):
+    r = int(h[0:2], 16)
+    g = int(h[2:4], 16)
+    b = int(h[4:6], 16)
+    return r, g, b
+
+
 @lru_cache(maxsize=1024)
-def 生(url: str = None, txt: str = '好!', size=32, border=3, barlen='auto', fontsize=15, barradius=5, scale=1, fontcolor='auto', shadow=0.5, backcolor='auto', anime=0.5):
+def 生(url: str = None, txt: str = '好!', size=32, border=3, barlen='auto', fontsize=15, barradius=5, scale=1, fontcolor: color = 'auto', shadow=0.5, backcolor: color = 'auto', anime=0.5):
     print([url, txt, size, border, barlen, fontsize, barradius, scale, fontcolor, shadow, backcolor, anime])
     if barlen == 'auto':
         l = len(txt) + len([x for x in txt if ord(x) > 127])*0.84
@@ -124,4 +132,5 @@ def 死(**d):
     if repo:= d.pop('repo', ''):
         txt = f'☆{gi.get_star(repo)}'
         return 生(txt=txt, **d)
+    print(d)
     return 生(**d)
