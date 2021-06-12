@@ -63,7 +63,7 @@
     > 样例: `border=4`  
     > ![](https://unv-shield.librian.net/api/unv_shield?code=1&border=4)  
 
-    设定边框边距和阴影扩散范围。  
+    设定边距和阴影扩散范围。  
     
 - `barlen`  
     > 样例: `barlen=100`  
@@ -84,7 +84,7 @@
     设定字体大小.
 
 - `barradius`  
-    > 样例: `fontsize=999`  
+    > 样例: `barradius=999`  
     > ![](https://unv-shield.librian.net/api/unv_shield?code=1&barradius=999)  
 
     设定文本条的援交。  
@@ -124,4 +124,4 @@
 
 ## 赞助
 
-如果你觉得<b>unv-shield</b>对你的工作或学习有所帮助，欢迎往作者的邮箱里发送萝莉图片表达感谢。
+如果你觉得<b>unv-shield</b>对你的工作或学习有所帮助，欢迎往作者的邮箱里发萝莉图片以表达谢意。
