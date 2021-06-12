@@ -129,8 +129,11 @@ def 生(url: str = None, txt: str = '好!', size=32, border=3, barlen='auto', fo
 
 
 def 死(**d):
-    if repo:= d.pop('repo', ''):
-        txt = f'☆{gi.get_star(repo)}'
-        return 生(txt=txt, **d)
-    print(d)
-    return 生(**d)
+    try:
+        if repo:= d.pop('repo', ''):
+            txt = f'☆{gi.get_star(repo)}'
+            return 生(txt=txt, **d)
+        print(d)
+        return 生(**d)
+    except Exception as e:
+        return 生(txt=repr(e))
