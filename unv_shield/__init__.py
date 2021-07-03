@@ -1,7 +1,6 @@
 import json
-import inspect
+import random
 import logging
-
 import azure.functions as func
 
 from .handler import 生, 死
@@ -21,7 +20,11 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         for k, v in 参数表.items():
             tp = 生.__annotations__.get(k, float)
             参数新表[k] = 相位转移(tp, v)
-        return func.HttpResponse(死(**参数新表), mimetype='image/svg+xml')
+        return func.HttpResponse(
+            死(**参数新表), 
+            mimetype='image/svg+xml', 
+            headers={'Cache-Control': f'max-age={random.randint(60*10, 60*120)}'},
+        )
     except Exception as e:
         logging.exception(e)
         return response(f'运行错误: {repr(e)}', status_code=422)
