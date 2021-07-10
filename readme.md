@@ -112,14 +112,14 @@
 如果你心急如焚，也可以给这个Repo提交PR，让<b>unv-shield</b>支持更多数据源。
 
 
-## 在线玩耍
-
-(还没做)
-
-
 ## 服务架构
 
-(写不动了剩下的下次再写吧……)
+![./文档/q.png](./文档/q.png)
+
+- 服务的核心是Azure上的一个Function App<sub>(FAAS)</sub>。
+- 用cloudflare做了一层HTTP缓存，可以省钱。
+- 通过GitHub访问时还会过一层Camo缓存。
+- 活死人的呼声是一个定时触发器，用来防止unv-shield冷启动。
 
 
 ## 赞助
