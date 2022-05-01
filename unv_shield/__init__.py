@@ -23,7 +23,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         return func.HttpResponse(
             死(**参数新表), 
             mimetype='image/svg+xml', 
-            headers={'Cache-Control': f'max-age={random.randint(60*10, 60*120)}'},
+            headers={'Cache-Control': f'max-age={3600*48}'},
         )
     except Exception as e:
         logging.exception(e)
