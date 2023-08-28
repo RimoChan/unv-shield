@@ -50,6 +50,7 @@ def 主要颜色(img):
 @lru_cache(maxsize=16)
 def 下载(url, 大小限制):
     r = requests.get(url, stream=True)
+    r.raise_for_status()
     data = r.raw.read(大小限制)
     return data
 
