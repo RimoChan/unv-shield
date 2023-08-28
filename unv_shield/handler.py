@@ -1,6 +1,7 @@
 import json
 import base64
 import colorsys
+import threading
 import statistics
 from pathlib import Path
 from functools import lru_cache
@@ -53,12 +54,16 @@ def 下载(url, 大小限制):
     return data
 
 
+_下载锁 = [threading.Lock() for _ in range(64)]
+
+
 @lru_cache(maxsize=4)
 def 真源(url):
     if not url:
         img_data = open(此处/'模板/我.jpg', 'rb').read()
     else:
-        img_data = 下载(url, 10*MB)
+        with _下载锁[sum(url.encode()) % 64]:
+            img_data = 下载(url, 10*MB)
         if len(img_data) == 10*MB:
             raise Exception('太大了，不行！')
     img = cv2.imdecode(np.frombuffer(img_data, np.uint8), -1)   # 这里可能会被打爆2333
